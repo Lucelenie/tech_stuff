@@ -8,7 +8,11 @@
 
 concentration = input("What is the concentration of the protein in mg/mL? ")
 molecular_weight = input("What is the molecular weight of the protein? ")
-molarity = input("At what concentration you need the protein (molarity)? ")
-volume = round(((concentration / molecular_weight) / molarity)* 1000000, 1)
-print "You will need %r uL of your protein for it to be at %r uM." % (
-    volume, molarity)
+molarity_2 = input("At what concentration you need the protein (molarity)? ")
+
+molarity_1 = (concentration / molecular_weight)
+volume_1 = round((((0.014 * 0.0000005)/ molarity_1) * 1000000), 1)
+buffer_1000 = round(1000 - volume_1) 
+
+print "You will need %r uL of your protein and 13.%r mL of buffer for it to be at %r uM." % (
+    volume_1, buffer_1000, molarity_2)
